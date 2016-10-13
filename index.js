@@ -185,7 +185,7 @@ function portfolioComponent () {
   function hoverPortfolio(){
    var element = this
    var newElement = yo`
-   <div onmouseout = ${unhoverPortfolio} onclik = ${openNewTab}>
+   <div onmouseout = ${unhoverPortfolio} onclick = ${openNewTab}>
        <div class="${css.portfolio}">
           <div class="${css.portfolioItem_isHover}">
             <div class="${css.portfolioTitle_isHover}">
@@ -203,17 +203,15 @@ function portfolioComponent () {
       `
       yo.update(element, newElement)
     }
-  function unhoverPortfolio(){
-   var element = this
-   var newElement = template()
-   yo.update(element, newElement)
-  }
+  function unhoverPortfolio(){ yo.update(element, template()) }
   function openNewTab() {
-    var url = ""
-    var win = window.open(url, '_blank');
-    win.focus();
+    var url = "https://milan995.github.io/kviz/"
+    var tab = window.open(url, '_blank');
+    tab.focus();
   }
-}
+    var element = template ()
+    return element
+  }
 /*----------------------------------------------------------TEXTBOX COMPONENT
 ----------------------------------------------------------*/
 
